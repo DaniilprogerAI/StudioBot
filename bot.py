@@ -3,6 +3,12 @@ from discord.ext import commands
 import os
 from dotenv import load_dotenv
 
+UPLOAD_FOLDER = os.path.join(os.getcwd(), "files")
+
+# пример сохранения файла
+# file = await attachment.to_file()
+# await file.save(os.path.join(UPLOAD_FOLDER, attachment.filename))
+
 load_dotenv()
 
 GUILD_ID = int(os.getenv("GUILD_ID"))
