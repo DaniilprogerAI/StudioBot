@@ -2,6 +2,62 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+import aiosqlite
+import asyncio
+
+async def init_db():
+    async with aiosqlite.connect("studio.db") as db:
+        await db.execute("""
+            -- tasks: основная карточка задачи
+            CREATE TABLE tasks (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              title TEXT,
+              scene TEXT,
+              assignee_id INTEGER,
+              creator_id INTEGER,
+              deadline TEXT,        -- ISO string
+              status TEXT,          -- open, in_progress, submitted, in_review, approved, rejected
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            
+        """)
+        await db.execute("""
+                        
+            -- checklist items (опционально)
+            CREATE TABLE checklist (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              task_id INTEGER,
+              title TEXT,
+              done INTEGER DEFAULT 0
+            );
+            """)
+        await db.execute("""
+                        -- submissions: ссылки на загруженные файлы
+            CREATE TABLE submissions (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              task_id INTEGER,
+              user_id INTEGER,
+              filename TEXT,
+              filepath TEXT,        -- локальный путь или S3 URL
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+              status TEXT DEFAULT 'submitted'
+            );
+            """)
+        await db.execute("""
+                        
+            -- audit / лог
+            CREATE TABLE audit (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              task_id INTEGER,
+              actor_id INTEGER,
+              action TEXT,
+              details TEXT,
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            """)
+        await db.commit()
+
+asyncio.run(init_db())
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), "files")
 
