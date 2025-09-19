@@ -5,6 +5,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+GUILD_ID = int(os.getenv("GUILD_ID"))
+SUBMISSIONS_CHANNEL_ID = int(os.getenv("SUBMISSIONS_CHANNEL_ID"))
+TASKS_CHANNEL_ID = int(os.getenv("TASKS_CHANNEL_ID"))
+REPORTS_CHANNEL_ID = int(os.getenv("REPORTS_CHANNEL_ID"))
+
 intents = discord.Intents.default()
 intents.message_content = True
 
