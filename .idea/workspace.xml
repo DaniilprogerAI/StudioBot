@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4067b7b0-f574-4dcb-8200-2a9f5e13160e" name="Changes" comment="Add token">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-    </list>
+    <list default="true" id="4067b7b0-f574-4dcb-8200-2a9f5e13160e" name="Changes" comment="Load variables for code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,14 +89,32 @@
       <option name="project" value="LOCAL" />
       <updated>1758267318437</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create file .env">
+      <option name="closed" value="true" />
+      <created>1758269249763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758269249763</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Load variables for code">
+      <option name="closed" value="true" />
+      <created>1758269323324</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758269323324</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Install discord.py" />
     <MESSAGE value="Create file bot.py for basic code" />
     <MESSAGE value="Add token" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add token" />
+    <MESSAGE value="Create file .env" />
+    <MESSAGE value="Load variables for code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Load variables for code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

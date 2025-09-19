@@ -25,3 +25,7 @@ async def submit(ctx, *, text):
 
 TOKEN = os.getenv("BOT_TOKEN")
 bot.run(TOKEN)
+
+print(TOKEN)
+print(GUILD_ID)
+print(SUBMISSIONS_CHANNEL_ID)
